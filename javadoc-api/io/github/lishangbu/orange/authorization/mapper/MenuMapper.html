@@ -101,12 +101,7 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Me
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../entity/Menu.html" title="io.github.lishangbu.orange.authorization.entity中的类">Menu</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectListByRoleCodes(java.util.List)" class="member-name-link">selectListByRoleCodes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&gt;&nbsp;roleCodes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">通过角色代码查询所有菜单
-
-
-  使用 DISTINCT 去重，避免 JOIN 导致重复权限记录
-  使用实体关系 join，避免直接依赖中间表
-</div>
+<div class="block">通过角色代码查询所有菜单</div>
 </div>
 </div>
 </div>
@@ -129,16 +124,11 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Me
 <section class="detail" id="selectListByRoleCodes(java.util.List)">
 <h3>selectListByRoleCodes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="annotations">@Select("    SELECT DISTINCT m.*\n    FROM menu m\n    JOIN menu_role mr ON m.id = mr.menu_id\n    JOIN role r ON mr.role_id = r.id\n    WHERE r.code IN\n    &lt;foreach collection='roleCodes' item='code' open='(' separator=',' close=')'&gt;\n      #{code}\n    &lt;/foreach&gt;\n    ORDER BY m.sort_order DESC\n")
-</span><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Menu.html" title="io.github.lishangbu.orange.authorization.entity中的类">Menu</a>&gt;</span>&nbsp;<span class="element-name">selectListByRoleCodes</span><wbr><span class="parameters">(@Param("roleCodes")
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&gt;&nbsp;roleCodes)</span></div>
-<div class="block">通过角色代码查询所有菜单
-
-<ol>
-  <li>使用 DISTINCT 去重，避免 JOIN 导致重复权限记录
-  <li>使用实体关系 join，避免直接依赖中间表
-</ol></div>
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Menu.html" title="io.github.lishangbu.orange.authorization.entity中的类">Menu</a>&gt;</span>&nbsp;<span class="element-name">selectListByRoleCodes</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>&gt;&nbsp;roleCodes)</span></div>
+<div class="block">通过角色代码查询所有菜单</div>
 <dl class="notes">
+<dt>参数:</dt>
+<dd><code>roleCodes</code> - 角色编码列表</dd>
 <dt>返回:</dt>
 <dd>菜单列表</dd>
 </dl>

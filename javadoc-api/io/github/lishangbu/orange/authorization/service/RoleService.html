@@ -54,6 +54,16 @@ loadScripts(document, 'script');</script>
 <div class="toc-header">目录&nbsp;<input type="text" class="filter-input" disabled placeholder="筛选内容（键入 .）" aria-label="筛选目录" autocomplete="off" spellcheck="false"><input type="reset" class="reset-filter" disabled tabindex="-1" value="重置"></div>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">说明</a></li>
+<li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详细资料</a>
+<ol class="toc-list">
+<li><a href="#getPageByRole(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Role)" tabindex="0">getPageByRole(IPage, Role)</a></li>
+<li><a href="#saveRole(io.github.lishangbu.orange.authorization.entity.Role)" tabindex="0">saveRole(Role)</a></li>
+<li><a href="#updateRole(io.github.lishangbu.orange.authorization.entity.Role)" tabindex="0">updateRole(Role)</a></li>
+<li><a href="#deleteRole(java.lang.Long)" tabindex="0">deleteRole(Long)</a></li>
+<li><a href="#getRoleById(java.lang.Long)" tabindex="0">getRoleById(Long)</a></li>
+</ol>
+</li>
 </ol>
 <button class="hide-sidebar"><span>隐藏子工具栏&nbsp;</span><img src="../../../../../../resource-files/left.svg" alt="隐藏子工具栏"></button><button class="show-sidebar"><img src="../../../../../../resource-files/right.svg" alt="显示子工具栏"><span>&nbsp;显示子工具栏</span></button></nav>
 <main role="main">
@@ -77,6 +87,147 @@ loadScripts(document, 'script');</script>
 <dd>lishangbu</dd>
 </dl>
 </div>
+</section>
+<section class="summary">
+<ul class="summary-list">
+<!-- ========== METHOD SUMMARY =========== -->
+<li>
+<section class="method-summary" id="method-summary">
+<h2>方法概要</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">修饰符和类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">说明</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteRole(java.lang.Long)" class="member-name-link">deleteRole</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">根据ID删除角色</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>com.baomidou.mybatisplus.core.metadata.IPage<wbr>&lt;<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPageByRole(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Role)" class="member-name-link">getPageByRole</a><wbr>(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&gt;&nbsp;page,
+ <a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&nbsp;roleCondition)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">分页查询角色列表</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getRoleById(java.lang.Long)" class="member-name-link">getRoleById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">根据ID查询角色详情</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#saveRole(io.github.lishangbu.orange.authorization.entity.Role)" class="member-name-link">saveRole</a><wbr>(<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&nbsp;role)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">新增角色</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateRole(io.github.lishangbu.orange.authorization.entity.Role)" class="member-name-link">updateRole</a><wbr>(<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&nbsp;role)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">根据ID更新角色信息</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>方法详细资料</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="getPageByRole(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Role)">
+<h3>getPageByRole</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&gt;</span>&nbsp;<span class="element-name">getPageByRole</span><wbr><span class="parameters">(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&gt;&nbsp;page,
+ <a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&nbsp;roleCondition)</span></div>
+<div class="block">分页查询角色列表
+
+<p>支持按角色代码、名称、启用状态等条件进行模糊查询，结果按创建时间倒序排列</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>page</code> - 分页参数，包含页码和每页大小</dd>
+<dd><code>roleCondition</code> - 查询条件，包含角色代码、名称、启用状态等字段</dd>
+<dt>返回:</dt>
+<dd>角色分页数据，包含角色列表和分页信息</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="saveRole(io.github.lishangbu.orange.authorization.entity.Role)">
+<h3>saveRole</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a></span>&nbsp;<span class="element-name">saveRole</span><wbr><span class="parameters">(<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&nbsp;role)</span></div>
+<div class="block">新增角色
+
+<p>创建一个新的角色信息</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>role</code> - 角色实体，包含代码、名称、启用状态等信息</dd>
+<dt>返回:</dt>
+<dd>新增后的角色实体</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="updateRole(io.github.lishangbu.orange.authorization.entity.Role)">
+<h3>updateRole</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">updateRole</span><wbr><span class="parameters">(<a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a>&nbsp;role)</span></div>
+<div class="block">根据ID更新角色信息
+
+<p>支持更新角色代码、名称、启用状态等字段</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>role</code> - 角色实体，包含需更新的字段，ID不能为空</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="deleteRole(java.lang.Long)">
+<h3>deleteRole</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteRole</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
+<div class="block">根据ID删除角色
+
+<p>物理删除角色信息</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>id</code> - 角色ID</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getRoleById(java.lang.Long)">
+<h3>getRoleById</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="../entity/Role.html" title="io.github.lishangbu.orange.authorization.entity中的类">Role</a></span>&nbsp;<span class="element-name">getRoleById</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
+<div class="block">根据ID查询角色详情
+
+<p>返回指定ID的角色信息</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>id</code> - 角色ID</dd>
+<dt>返回:</dt>
+<dd>角色实体，未找到时返回null</dd>
+</dl>
+</div>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
 </section>
 <!-- ========= END OF CLASS DATA ========= -->
 <footer role="contentinfo">

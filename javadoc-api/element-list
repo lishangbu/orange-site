@@ -7,6 +7,7 @@ io.github.lishangbu.orange.authorization.service
 io.github.lishangbu.orange.authorization.service.impl
 io.github.lishangbu.orange.json.autoconfiguration
 io.github.lishangbu.orange.json.util
+io.github.lishangbu.orange.mybatisplus.autoconfiguration
 io.github.lishangbu.orange.mybatisplus.extension.handlers
 io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration
 io.github.lishangbu.orange.oauth2.authorizationserver.exception
