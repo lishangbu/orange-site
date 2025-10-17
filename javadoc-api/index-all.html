@@ -138,9 +138,13 @@ Token Response</code>.</div>
 <dd>
 <div class="block">响应体写出前的统一包装处理</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/web/util/TreeUtils.html#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)" class="member-name-link">buildTree(List, Function, Function, BiConsumer)</a> - 类中的静态方法 io.github.lishangbu.orange.web.util.<a href="io/github/lishangbu/orange/web/util/TreeUtils.html" title="io.github.lishangbu.orange.web.util中的类">TreeUtils</a></dt>
+<dt><a href="io/github/lishangbu/orange/web/util/TreeUtils.html#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)" class="member-name-link">buildTree(List, Function, Function, Function, BiConsumer)</a> - 类中的静态方法 io.github.lishangbu.orange.web.util.<a href="io/github/lishangbu/orange/web/util/TreeUtils.html" title="io.github.lishangbu.orange.web.util中的类">TreeUtils</a></dt>
 <dd>
-<div class="block">将列表转换为树形结构</div>
+<div class="block">将列表转换为树形结构，根父ID默认为 null</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/web/util/TreeUtils.html#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)" class="member-name-link">buildTree(List, Function, Function, Function, BiConsumer, I)</a> - 类中的静态方法 io.github.lishangbu.orange.web.util.<a href="io/github/lishangbu/orange/web/util/TreeUtils.html" title="io.github.lishangbu.orange.web.util中的类">TreeUtils</a></dt>
+<dd>
+<div class="block">将列表转换为树形结构，允许指定 childrenGetter 和 rootParentId</div>
 </dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
@@ -163,13 +167,13 @@ Token Response</code>.</div>
 <dd>
 <div class="block">将 HTTP 请求转换为 OAuth2 密码授权类型的认证令牌</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html#create(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">create(Organization)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a></dt>
-<dd>
-<div class="block">新增组织</div>
-</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/controller/RoleController.html#create(io.github.lishangbu.orange.authorization.entity.Role)" class="member-name-link">create(Role)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/RoleController.html" title="io.github.lishangbu.orange.authorization.controller中的类">RoleController</a></dt>
 <dd>
 <div class="block">新增角色</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html#create(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">create(Organization)</a> - 类中的方法 io.github.lishangbu.orange.rbac.controller.<a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a></dt>
+<dd>
+<div class="block">新增组织</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/authorizationserver/token/JwtOAuth2TokenCustomizer.html#customize(org.springframework.security.oauth2.server.authorization.token.JwtEncodingContext)" class="member-name-link">customize(JwtEncodingContext)</a> - 类中的方法 io.github.lishangbu.orange.oauth2.authorizationserver.token.<a href="io/github/lishangbu/orange/oauth2/authorizationserver/token/JwtOAuth2TokenCustomizer.html" title="io.github.lishangbu.orange.oauth2.authorizationserver.token中的类">JwtOAuth2TokenCustomizer</a></dt>
 <dd>&nbsp;</dd>
@@ -238,21 +242,21 @@ Token Response</code>.</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/authorization/service/impl/DefaultUserDetailsService.html#%3Cinit%3E()" class="member-name-link">DefaultUserDetailsService()</a> - 类的构造器 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/DefaultUserDetailsService.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">DefaultUserDetailsService</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html#delete(java.lang.Long)" class="member-name-link">delete(Long)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a></dt>
-<dd>
-<div class="block">根据ID删除组织</div>
-</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/controller/RoleController.html#delete(java.lang.Long)" class="member-name-link">delete(Long)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/RoleController.html" title="io.github.lishangbu.orange.authorization.controller中的类">RoleController</a></dt>
 <dd>
 <div class="block">根据ID删除角色</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/mapper/OauthAuthorizationConsentMapper.html#deleteByRegisteredClientIdAndPrincipalName(java.lang.String,java.lang.String)" class="member-name-link">deleteByRegisteredClientIdAndPrincipalName(String, String)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.mapper.<a href="io/github/lishangbu/orange/authorization/mapper/OauthAuthorizationConsentMapper.html" title="io.github.lishangbu.orange.authorization.mapper中的接口">OauthAuthorizationConsentMapper</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html#deleteOrganization(java.lang.Long)" class="member-name-link">deleteOrganization(Long)</a> - 类中的方法 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html#delete(java.lang.Long)" class="member-name-link">delete(Long)</a> - 类中的方法 io.github.lishangbu.orange.rbac.controller.<a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a></dt>
 <dd>
 <div class="block">根据ID删除组织</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html#deleteOrganization(java.lang.Long)" class="member-name-link">deleteOrganization(Long)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.service.<a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></dt>
+<dt><a href="io/github/lishangbu/orange/authorization/mapper/OauthAuthorizationConsentMapper.html#deleteByRegisteredClientIdAndPrincipalName(java.lang.String,java.lang.String)" class="member-name-link">deleteByRegisteredClientIdAndPrincipalName(String, String)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.mapper.<a href="io/github/lishangbu/orange/authorization/mapper/OauthAuthorizationConsentMapper.html" title="io.github.lishangbu.orange.authorization.mapper中的接口">OauthAuthorizationConsentMapper</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html#deleteOrganization(java.lang.Long)" class="member-name-link">deleteOrganization(Long)</a> - 类中的方法 io.github.lishangbu.orange.rbac.service.impl.<a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dd>
+<div class="block">根据ID删除组织</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html#deleteOrganization(java.lang.Long)" class="member-name-link">deleteOrganization(Long)</a> - 接口中的方法 io.github.lishangbu.orange.rbac.service.<a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></dt>
 <dd>
 <div class="block">根据ID删除组织</div>
 </dd>
@@ -347,13 +351,13 @@ Token Response</code>.</div>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/common/userdetails/UserInfo.html#getAttributes()" class="member-name-link">getAttributes()</a> - 类中的方法 io.github.lishangbu.orange.oauth2.common.userdetails.<a href="io/github/lishangbu/orange/oauth2/common/userdetails/UserInfo.html" title="io.github.lishangbu.orange.oauth2.common.userdetails中的类">UserInfo</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html#getById(java.lang.Long)" class="member-name-link">getById(Long)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a></dt>
-<dd>
-<div class="block">根据ID查询组织详情</div>
-</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/controller/RoleController.html#getById(java.lang.Long)" class="member-name-link">getById(Long)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/RoleController.html" title="io.github.lishangbu.orange.authorization.controller中的类">RoleController</a></dt>
 <dd>
 <div class="block">根据ID查询角色详情</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html#getById(java.lang.Long)" class="member-name-link">getById(Long)</a> - 类中的方法 io.github.lishangbu.orange.rbac.controller.<a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a></dt>
+<dd>
+<div class="block">根据ID查询组织详情</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/web/util/AbstractUrlIgnoreCache.html#getIgnoreUrls()" class="member-name-link">getIgnoreUrls()</a> - 类中的方法 io.github.lishangbu.orange.web.util.<a href="io/github/lishangbu/orange/web/util/AbstractUrlIgnoreCache.html" title="io.github.lishangbu.orange.web.util中的类">AbstractUrlIgnoreCache</a></dt>
 <dd>
@@ -375,19 +379,19 @@ Token Response</code>.</div>
 <dd>
 <div class="block">获取从根节点到目标节点的路径</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById(Long)</a> - 类中的方法 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById(Long)</a> - 类中的方法 io.github.lishangbu.orange.rbac.service.impl.<a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a></dt>
 <dd>
 <div class="block">根据ID查询组织详情</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById(Long)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.service.<a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById(Long)</a> - 接口中的方法 io.github.lishangbu.orange.rbac.service.<a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></dt>
 <dd>
 <div class="block">根据ID查询组织详情</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">getPageByOrganization(IPage, Organization)</a> - 类中的方法 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">getPageByOrganization(IPage, Organization)</a> - 类中的方法 io.github.lishangbu.orange.rbac.service.impl.<a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a></dt>
 <dd>
 <div class="block">分页查询组织列表</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">getPageByOrganization(IPage, Organization)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.service.<a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">getPageByOrganization(IPage, Organization)</a> - 接口中的方法 io.github.lishangbu.orange.rbac.service.<a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></dt>
 <dd>
 <div class="block">分页查询组织列表</div>
 </dd>
@@ -487,7 +491,7 @@ Token Response</code>.</div>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/mapper/package-summary.html">io.github.lishangbu.orange.authorization.mapper</a> - 程序包 io.github.lishangbu.orange.authorization.mapper</dt>
 <dd>
-<div class="block">数据持久层</div>
+<div class="block">认证模块数据持久层</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/authorization/model/package-summary.html">io.github.lishangbu.orange.authorization.model</a> - 程序包 io.github.lishangbu.orange.authorization.model</dt>
 <dd>&nbsp;</dd>
@@ -534,6 +538,18 @@ Token Response</code>.</div>
 <dt><a href="io/github/lishangbu/orange/oauth2/common/web/authentication/package-summary.html">io.github.lishangbu.orange.oauth2.common.web.authentication</a> - 程序包 io.github.lishangbu.orange.oauth2.common.web.authentication</dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/resourceserver/autoconfiguration/package-summary.html">io.github.lishangbu.orange.oauth2.resourceserver.autoconfiguration</a> - 程序包 io.github.lishangbu.orange.oauth2.resourceserver.autoconfiguration</dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/package-summary.html">io.github.lishangbu.orange.rbac.controller</a> - 程序包 io.github.lishangbu.orange.rbac.controller</dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/entity/package-summary.html">io.github.lishangbu.orange.rbac.entity</a> - 程序包 io.github.lishangbu.orange.rbac.entity</dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/mapper/package-summary.html">io.github.lishangbu.orange.rbac.mapper</a> - 程序包 io.github.lishangbu.orange.rbac.mapper</dt>
+<dd>
+<div class="block">RBAC模块数据持久层</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/service/package-summary.html">io.github.lishangbu.orange.rbac.service</a> - 程序包 io.github.lishangbu.orange.rbac.service</dt>
+<dd>&nbsp;</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/package-summary.html">io.github.lishangbu.orange.rbac.service.impl</a> - 程序包 io.github.lishangbu.orange.rbac.service.impl</dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/web/exception/package-summary.html">io.github.lishangbu.orange.web.exception</a> - 程序包 io.github.lishangbu.orange.web.exception</dt>
 <dd>&nbsp;</dd>
@@ -811,42 +827,42 @@ parameters.</div>
 <dd>&nbsp;</dd>
 <dt><a href="org/springframework/security/oauth2/server/authorization/web/authentication/package-summary.html">org.springframework.security.oauth2.server.authorization.web.authentication</a> - 程序包 org.springframework.security.oauth2.server.authorization.web.authentication</dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/entity/Organization.html" class="type-name-link" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a> - <a href="io/github/lishangbu/orange/authorization/entity/package-summary.html">io.github.lishangbu.orange.authorization.entity</a>中的类</dt>
+<dt><a href="io/github/lishangbu/orange/rbac/entity/Organization.html" class="type-name-link" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a> - <a href="io/github/lishangbu/orange/rbac/entity/package-summary.html">io.github.lishangbu.orange.rbac.entity</a>中的类</dt>
 <dd>
 <div class="block">组织信息实体类，封装组织的层级结构和基本属性</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/entity/Organization.html#%3Cinit%3E()" class="member-name-link">Organization()</a> - 类的构造器 io.github.lishangbu.orange.authorization.entity.<a href="io/github/lishangbu/orange/authorization/entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/entity/Organization.html#%3Cinit%3E()" class="member-name-link">Organization()</a> - 类的构造器 io.github.lishangbu.orange.rbac.entity.<a href="io/github/lishangbu/orange/rbac/entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" class="type-name-link" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a> - <a href="io/github/lishangbu/orange/authorization/controller/package-summary.html">io.github.lishangbu.orange.authorization.controller</a>中的类</dt>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" class="type-name-link" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a> - <a href="io/github/lishangbu/orange/rbac/controller/package-summary.html">io.github.lishangbu.orange.rbac.controller</a>中的类</dt>
 <dd>
 <div class="block">组织控制器</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html#%3Cinit%3E()" class="member-name-link">OrganizationController()</a> - 类的构造器 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html#%3Cinit%3E()" class="member-name-link">OrganizationController()</a> - 类的构造器 io.github.lishangbu.orange.rbac.controller.<a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/mapper/OrganizationMapper.html" class="type-name-link" title="io.github.lishangbu.orange.authorization.mapper中的接口">OrganizationMapper</a> - <a href="io/github/lishangbu/orange/authorization/mapper/package-summary.html">io.github.lishangbu.orange.authorization.mapper</a>中的接口</dt>
+<dt><a href="io/github/lishangbu/orange/rbac/mapper/OrganizationMapper.html" class="type-name-link" title="io.github.lishangbu.orange.rbac.mapper中的接口">OrganizationMapper</a> - <a href="io/github/lishangbu/orange/rbac/mapper/package-summary.html">io.github.lishangbu.orange.rbac.mapper</a>中的接口</dt>
 <dd>
 <div class="block">组织信息数据库操作接口</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html" class="type-name-link" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a> - <a href="io/github/lishangbu/orange/authorization/service/package-summary.html">io.github.lishangbu.orange.authorization.service</a>中的接口</dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html" class="type-name-link" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a> - <a href="io/github/lishangbu/orange/rbac/service/package-summary.html">io.github.lishangbu.orange.rbac.service</a>中的接口</dt>
 <dd>
 <div class="block">组织信息服务接口</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" class="type-name-link" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a> - <a href="io/github/lishangbu/orange/authorization/service/impl/package-summary.html">io.github.lishangbu.orange.authorization.service.impl</a>中的类</dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" class="type-name-link" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a> - <a href="io/github/lishangbu/orange/rbac/service/impl/package-summary.html">io.github.lishangbu.orange.rbac.service.impl</a>中的类</dt>
 <dd>
 <div class="block">组织信息服务实现类</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html#%3Cinit%3E()" class="member-name-link">OrganizationServiceImpl()</a> - 类的构造器 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html#%3Cinit%3E()" class="member-name-link">OrganizationServiceImpl()</a> - 类的构造器 io.github.lishangbu.orange.rbac.service.impl.<a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
 <dl class="index">
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html#page(com.baomidou.mybatisplus.extension.plugins.pagination.Page,io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">page(Page, Organization)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a></dt>
-<dd>
-<div class="block">分页查询组织列表</div>
-</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/controller/RoleController.html#page(com.baomidou.mybatisplus.extension.plugins.pagination.Page,io.github.lishangbu.orange.authorization.entity.Role)" class="member-name-link">page(Page, Role)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/RoleController.html" title="io.github.lishangbu.orange.authorization.controller中的类">RoleController</a></dt>
 <dd>
 <div class="block">分页查询角色列表</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html#page(com.baomidou.mybatisplus.extension.plugins.pagination.Page,io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">page(Page, Organization)</a> - 类中的方法 io.github.lishangbu.orange.rbac.controller.<a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a></dt>
+<dd>
+<div class="block">分页查询组织列表</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/mybatisplus/extension/handlers/Jackson3TypeHandler.html#parse(java.lang.String)" class="member-name-link">parse(String)</a> - 类中的方法 io.github.lishangbu.orange.mybatisplus.extension.handlers.<a href="io/github/lishangbu/orange/mybatisplus/extension/handlers/Jackson3TypeHandler.html" title="io.github.lishangbu.orange.mybatisplus.extension.handlers中的类">Jackson3TypeHandler</a></dt>
 <dd>&nbsp;</dd>
@@ -1010,11 +1026,11 @@ parameters.</div>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/service/impl/DefaultOAuth2AuthorizationConsentService.html#save(org.springframework.security.oauth2.server.authorization.OAuth2AuthorizationConsent)" class="member-name-link">save(OAuth2AuthorizationConsent)</a> - 类中的方法 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/DefaultOAuth2AuthorizationConsentService.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">DefaultOAuth2AuthorizationConsentService</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html#saveOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">saveOrganization(Organization)</a> - 类中的方法 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">saveOrganization(Organization)</a> - 类中的方法 io.github.lishangbu.orange.rbac.service.impl.<a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a></dt>
 <dd>
 <div class="block">新增组织信息</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html#saveOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">saveOrganization(Organization)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.service.<a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">saveOrganization(Organization)</a> - 接口中的方法 io.github.lishangbu.orange.rbac.service.<a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></dt>
 <dd>
 <div class="block">新增组织信息</div>
 </dd>
@@ -1174,19 +1190,19 @@ and additional context information.</div>
 <dd>
 <div class="block"><code>401 Unauthorized</code>.</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html#update(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">update(Organization)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/OrganizationController.html" title="io.github.lishangbu.orange.authorization.controller中的类">OrganizationController</a></dt>
-<dd>
-<div class="block">根据ID更新组织信息</div>
-</dd>
 <dt><a href="io/github/lishangbu/orange/authorization/controller/RoleController.html#update(io.github.lishangbu.orange.authorization.entity.Role)" class="member-name-link">update(Role)</a> - 类中的方法 io.github.lishangbu.orange.authorization.controller.<a href="io/github/lishangbu/orange/authorization/controller/RoleController.html" title="io.github.lishangbu.orange.authorization.controller中的类">RoleController</a></dt>
 <dd>
 <div class="block">根据ID更新角色信息</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html#updateOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">updateOrganization(Organization)</a> - 类中的方法 io.github.lishangbu.orange.authorization.service.impl.<a href="io/github/lishangbu/orange/authorization/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.authorization.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html#update(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">update(Organization)</a> - 类中的方法 io.github.lishangbu.orange.rbac.controller.<a href="io/github/lishangbu/orange/rbac/controller/OrganizationController.html" title="io.github.lishangbu.orange.rbac.controller中的类">OrganizationController</a></dt>
 <dd>
 <div class="block">根据ID更新组织信息</div>
 </dd>
-<dt><a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html#updateOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">updateOrganization(Organization)</a> - 接口中的方法 io.github.lishangbu.orange.authorization.service.<a href="io/github/lishangbu/orange/authorization/service/OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></dt>
+<dt><a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">updateOrganization(Organization)</a> - 类中的方法 io.github.lishangbu.orange.rbac.service.impl.<a href="io/github/lishangbu/orange/rbac/service/impl/OrganizationServiceImpl.html" title="io.github.lishangbu.orange.rbac.service.impl中的类">OrganizationServiceImpl</a></dt>
+<dd>
+<div class="block">根据ID更新组织信息</div>
+</dd>
+<dt><a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">updateOrganization(Organization)</a> - 接口中的方法 io.github.lishangbu.orange.rbac.service.<a href="io/github/lishangbu/orange/rbac/service/OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></dt>
 <dd>
 <div class="block">根据ID更新组织信息</div>
 </dd>

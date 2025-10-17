@@ -63,7 +63,8 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">方法详细资料</a>
 <ol class="toc-list">
-<li><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)" tabindex="0">buildTree(List, Function, Function, BiConsumer)</a></li>
+<li><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)" tabindex="0">buildTree(List, Function, Function, Function, BiConsumer)</a></li>
+<li><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)" tabindex="0">buildTree(List, Function, Function, Function, BiConsumer, I)</a></li>
 <li><a href="#findNode(java.util.List,java.util.function.Predicate,java.util.function.Function)" tabindex="0">findNode(List, Predicate, Function)</a></li>
 <li><a href="#findNodes(java.util.List,java.util.function.Predicate,java.util.function.Function)" tabindex="0">findNodes(List, Predicate, Function)</a></li>
 <li><a href="#getNodePath(java.util.List,java.util.function.Predicate,java.util.function.Function)" tabindex="0">getNodePath(List, Predicate, Function)</a></li>
@@ -89,7 +90,9 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">TreeUtils</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a></span></div>
-<div class="block">树形结构工具类，用于处理树形数据</div>
+<div class="block">树形结构工具类，用于处理树形数据
+
+<p>提供构建/查找/过滤/遍历等常用树操作，要求调用方显式传入获取子节点的函数，移除反射兼容以提高类型安全和性能</div>
 <dl class="notes">
 <dt>从以下版本开始:</dt>
 <dd>2025/08/25</dd>
@@ -125,67 +128,78 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">方法</div>
 <div class="table-header col-last">说明</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T,<wbr>I&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)" class="member-name-link">buildTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;list,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)" class="member-name-link">buildTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;list,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;idGetter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;parentIdGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenSetter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">将列表转换为树形结构</div>
+<div class="block">将列表转换为树形结构，根父ID默认为 null</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#filterTree(java.util.List,java.util.function.Predicate,java.util.function.Function,java.util.function.BiConsumer)" class="member-name-link">filterTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T,<wbr>I&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)" class="member-name-link">buildTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;list,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;idGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;parentIdGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenSetter,
+ I&nbsp;rootParentId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">将列表转换为树形结构，允许指定 childrenGetter 和 rootParentId</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#filterTree(java.util.List,java.util.function.Predicate,java.util.function.Function,java.util.function.BiConsumer)" class="member-name-link">filterTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="java.util.function中的类或接口" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenSetter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">过滤树节点，保持树形结构</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findNode(java.util.List,java.util.function.Predicate,java.util.function.Function)" class="member-name-link">findNode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;T</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findNode(java.util.List,java.util.function.Predicate,java.util.function.Function)" class="member-name-link">findNode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="java.util.function中的类或接口" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">在树中查找符合条件的第一个节点</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T,<wbr>I&gt;&nbsp;T</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findNodeById(java.util.List,I,java.util.function.Function,java.util.function.Function)" class="member-name-link">findNodeById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T,<wbr>I&gt;&nbsp;T</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findNodeById(java.util.List,I,java.util.function.Function,java.util.function.Function)" class="member-name-link">findNodeById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
  I&nbsp;id,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;idGetter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">根据节点ID查找节点</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findNodes(java.util.List,java.util.function.Predicate,java.util.function.Function)" class="member-name-link">findNodes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#findNodes(java.util.List,java.util.function.Predicate,java.util.function.Function)" class="member-name-link">findNodes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="java.util.function中的类或接口" class="external-link">Predicate</a>&lt;T&gt;&nbsp;predicate,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">在树中查找所有符合条件的节点</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#flattenTree(java.util.List,java.util.function.Function)" class="member-name-link">flattenTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#flattenTree(java.util.List,java.util.function.Function)" class="member-name-link">flattenTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">树形结构扁平化为列表</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getMaxDepth(java.util.List,java.util.function.Function)" class="member-name-link">getMaxDepth</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">计算树的最大深度</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getNodePath(java.util.List,java.util.function.Predicate,java.util.function.Function)" class="member-name-link">getNodePath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="java.util.function中的类或接口" class="external-link">Predicate</a>&lt;T&gt;&nbsp;targetPredicate,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getMaxDepth(java.util.List,java.util.function.Function)" class="member-name-link">getMaxDepth</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">获取从根节点到目标节点的路径</div>
+<div class="block">计算树的最大深度</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#traverseTree(java.util.List,java.util.function.BiConsumer,java.util.function.Function)" class="member-name-link">traverseTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
- <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="java.lang中的类或接口" class="external-link">Integer</a>&gt;&nbsp;action,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getNodePath(java.util.List,java.util.function.Predicate,java.util.function.Function)" class="member-name-link">getNodePath</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Predicate.html" title="java.util.function中的类或接口" class="external-link">Predicate</a>&lt;T&gt;&nbsp;targetPredicate,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">获取从根节点到目标节点的路径</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#traverseTree(java.util.List,java.util.function.BiConsumer,java.util.function.Function)" class="member-name-link">traverseTree</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;tree,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="java.lang中的类或接口" class="external-link">Integer</a>&gt;&nbsp;action,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">遍历树结构，对每个节点执行操作</div>
 </div>
 </div>
@@ -222,23 +236,48 @@ loadScripts(document, 'script');</script>
 <h2>方法详细资料</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)">
+<section class="detail" id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)">
 <h3>buildTree</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>I&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;</span>&nbsp;<span class="element-name">buildTree</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;list,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;idGetter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;parentIdGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter,
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenSetter)</span></div>
-<div class="block">将列表转换为树形结构</div>
+<div class="block">将列表转换为树形结构，根父ID默认为 null</div>
+<dl class="notes">
+<dt>另请参阅:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="#buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)"><code>buildTree(List, Function, Function, Function, BiConsumer, Object)</code></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)">
+<h3 id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,java.lang.Object)">buildTree</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T,<wbr>I&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;</span>&nbsp;<span class="element-name">buildTree</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&nbsp;list,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;idGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr>I&gt;&nbsp;parentIdGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/Function.html" title="java.util.function中的类或接口" class="external-link">Function</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenGetter,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/BiConsumer.html" title="java.util.function中的类或接口" class="external-link">BiConsumer</a>&lt;T,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;T&gt;&gt;&nbsp;childrenSetter,
+ I&nbsp;rootParentId)</span></div>
+<div class="block">将列表转换为树形结构，允许指定 childrenGetter 和 rootParentId</div>
 <dl class="notes">
 <dt>类型参数:</dt>
-<dd><span id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)-type-param-T"><code>T</code> - 节点类型</span></dd>
-<dd><span id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer)-type-param-I"><code>I</code> - ID类型</span></dd>
+<dd><span id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)-type-param-T"><code>T</code> - 节点类型</span></dd>
+<dd><span id="buildTree(java.util.List,java.util.function.Function,java.util.function.Function,java.util.function.Function,java.util.function.BiConsumer,I)-type-param-I"><code>I</code> - ID类型</span></dd>
 <dt>参数:</dt>
 <dd><code>list</code> - 待转换的列表</dd>
 <dd><code>idGetter</code> - 获取节点ID的函数</dd>
 <dd><code>parentIdGetter</code> - 获取父节点ID的函数</dd>
+<dd><code>childrenGetter</code> - 获取节点子列表的函数（比反射更高效、类型安全）</dd>
 <dd><code>childrenSetter</code> - 设置子节点的函数</dd>
+<dd><code>rootParentId</code> - 被视为根节点父ID的值（例如 null、0、-1 等）</dd>
 <dt>返回:</dt>
 <dd>树形结构的根节点列表</dd>
 </dl>

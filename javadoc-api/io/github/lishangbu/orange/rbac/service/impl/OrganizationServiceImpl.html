@@ -5,7 +5,7 @@
 <title>OrganizationServiceImpl (orange 0.0.1-SNAPSHOT API)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description" content="declaration: package: io.github.lishangbu.orange.authorization.service.impl, class: OrganizationServiceImpl">
+<meta name="description" content="declaration: package: io.github.lishangbu.orange.rbac.service.impl, class: OrganizationServiceImpl">
 <meta name="generator" content="javadoc/ClassWriter">
 <link rel="stylesheet" type="text/css" href="../../../../../../../resource-files/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href="../../../../../../../resource-files/stylesheet.css">
@@ -40,7 +40,7 @@ loadScripts(document, 'script');</script>
 <div class="sub-nav">
 <div class="nav-content">
 <ol class="sub-nav-list">
-<li><a href="package-summary.html">io.github.lishangbu.orange.authorization.service.impl</a></li>
+<li><a href="package-summary.html">io.github.lishangbu.orange.rbac.service.impl</a></li>
 <li><a href="OrganizationServiceImpl.html" class="current-selection">OrganizationServiceImpl</a></li>
 </ol>
 <div class="nav-list-search"><input type="text" id="search-input" disabled placeholder="搜索文档（键入 /）" aria-label="在文档中搜索" autocomplete="off" spellcheck="false"><input type="reset" id="reset-search" disabled value="重置"></div>
@@ -64,9 +64,9 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">方法详细资料</a>
 <ol class="toc-list">
-<li><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Organization)" tabindex="0">getPageByOrganization(IPage, Organization)</a></li>
-<li><a href="#saveOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" tabindex="0">saveOrganization(Organization)</a></li>
-<li><a href="#updateOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" tabindex="0">updateOrganization(Organization)</a></li>
+<li><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">getPageByOrganization(IPage, Organization)</a></li>
+<li><a href="#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">saveOrganization(Organization)</a></li>
+<li><a href="#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">updateOrganization(Organization)</a></li>
 <li><a href="#deleteOrganization(java.lang.Long)" tabindex="0">deleteOrganization(Long)</a></li>
 <li><a href="#getOrganizationById(java.lang.Long)" tabindex="0">getOrganizationById(Long)</a></li>
 </ol>
@@ -79,10 +79,10 @@ loadScripts(document, 'script');</script>
 <h1 title="类 OrganizationServiceImpl" class="title">类 OrganizationServiceImpl</h1>
 </div>
 <div class="inheritance" title="继承树"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">java.lang.Object</a>
-<div class="inheritance">com.baomidou.mybatisplus.extension.repository.AbstractRepository&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.authorization.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;
-<div class="inheritance">com.baomidou.mybatisplus.extension.repository.CrudRepository&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.authorization.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;
-<div class="inheritance">com.baomidou.mybatisplus.extension.service.impl.ServiceImpl&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.authorization.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;
-<div class="inheritance">io.github.lishangbu.orange.authorization.service.impl.OrganizationServiceImpl</div>
+<div class="inheritance">com.baomidou.mybatisplus.extension.repository.AbstractRepository&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.rbac.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;
+<div class="inheritance">com.baomidou.mybatisplus.extension.repository.CrudRepository&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.rbac.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;
+<div class="inheritance">com.baomidou.mybatisplus.extension.service.impl.ServiceImpl&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.rbac.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;
+<div class="inheritance">io.github.lishangbu.orange.rbac.service.impl.OrganizationServiceImpl</div>
 </div>
 </div>
 </div>
@@ -90,14 +90,14 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>所有已实现的接口:</dt>
-<dd><code>com.baomidou.mybatisplus.extension.repository.IRepository&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;, com.baomidou.mybatisplus.extension.service.IService&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;, <a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></code></dd>
+<dd><code>com.baomidou.mybatisplus.extension.repository.IRepository&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;, com.baomidou.mybatisplus.extension.service.IService&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;, <a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
 </dl>
 <hr>
 <div class="horizontal-scroll">
 <div class="type-signature"><span class="annotations">@Service
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">OrganizationServiceImpl</span>
-<span class="extends-implements">extends com.baomidou.mybatisplus.extension.service.impl.ServiceImpl&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.authorization.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;
-implements <a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></span></div>
+<span class="extends-implements">extends com.baomidou.mybatisplus.extension.service.impl.ServiceImpl&lt;<a href="../../mapper/OrganizationMapper.html" title="io.github.lishangbu.orange.rbac.mapper中的接口">OrganizationMapper</a>, <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;
+implements <a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></span></div>
 <div class="block">组织信息服务实现类
 
 <p>实现组织的分页、条件查询、增删改查等核心业务逻辑</div>
@@ -155,24 +155,24 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">根据ID删除组织</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">根据ID查询组织详情</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.baomidou.mybatisplus.core.metadata.IPage<wbr>&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">getPageByOrganization</a><wbr>(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;&nbsp;page,
- <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&nbsp;condition)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>com.baomidou.mybatisplus.core.metadata.IPage<wbr>&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">getPageByOrganization</a><wbr>(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
+ <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;condition)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">分页查询组织列表</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">saveOrganization</a><wbr>(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">saveOrganization</a><wbr>(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">新增组织信息</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateOrganization(io.github.lishangbu.orange.authorization.entity.Organization)" class="member-name-link">updateOrganization</a><wbr>(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">updateOrganization</a><wbr>(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">根据ID更新组织信息</div>
 </div>
@@ -222,15 +222,15 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <h2>方法详细资料</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Organization)">
+<section class="detail" id="getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)">
 <h3>getPageByOrganization</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">getPageByOrganization</span><wbr><span class="parameters">(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&gt;&nbsp;page,
- <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&nbsp;condition)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">getPageByOrganization</span><wbr><span class="parameters">(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
+ <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;condition)</span></div>
 <div class="block">分页查询组织列表</div>
 <dl class="notes">
 <dt>指定者:</dt>
-<dd><code><a href="../OrganizationService.html#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.authorization.entity.Organization)">getPageByOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></code></dd>
+<dd><code><a href="../OrganizationService.html#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)">getPageByOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
 <dt>参数:</dt>
 <dd><code>page</code> - 分页参数</dd>
 <dd><code>condition</code> - 查询条件</dd>
@@ -241,14 +241,14 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 </section>
 </li>
 <li>
-<section class="detail" id="saveOrganization(io.github.lishangbu.orange.authorization.entity.Organization)">
+<section class="detail" id="saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)">
 <h3>saveOrganization</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a></span>&nbsp;<span class="element-name">saveOrganization</span><wbr><span class="parameters">(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&nbsp;organization)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></span>&nbsp;<span class="element-name">saveOrganization</span><wbr><span class="parameters">(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</span></div>
 <div class="block">新增组织信息</div>
 <dl class="notes">
 <dt>指定者:</dt>
-<dd><code><a href="../OrganizationService.html#saveOrganization(io.github.lishangbu.orange.authorization.entity.Organization)">saveOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></code></dd>
+<dd><code><a href="../OrganizationService.html#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)">saveOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
 <dt>参数:</dt>
 <dd><code>organization</code> - 组织实体</dd>
 <dt>返回:</dt>
@@ -258,14 +258,14 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 </section>
 </li>
 <li>
-<section class="detail" id="updateOrganization(io.github.lishangbu.orange.authorization.entity.Organization)">
+<section class="detail" id="updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)">
 <h3>updateOrganization</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateOrganization</span><wbr><span class="parameters">(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a>&nbsp;organization)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">updateOrganization</span><wbr><span class="parameters">(<a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</span></div>
 <div class="block">根据ID更新组织信息</div>
 <dl class="notes">
 <dt>指定者:</dt>
-<dd><code><a href="../OrganizationService.html#updateOrganization(io.github.lishangbu.orange.authorization.entity.Organization)">updateOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></code></dd>
+<dd><code><a href="../OrganizationService.html#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)">updateOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
 <dt>参数:</dt>
 <dd><code>organization</code> - 组织实体</dd>
 </dl>
@@ -280,7 +280,7 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <div class="block">根据ID删除组织</div>
 <dl class="notes">
 <dt>指定者:</dt>
-<dd><code><a href="../OrganizationService.html#deleteOrganization(java.lang.Long)">deleteOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></code></dd>
+<dd><code><a href="../OrganizationService.html#deleteOrganization(java.lang.Long)">deleteOrganization</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
 <dt>参数:</dt>
 <dd><code>id</code> - 组织ID</dd>
 </dl>
@@ -291,11 +291,11 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <section class="detail" id="getOrganizationById(java.lang.Long)">
 <h3>getOrganizationById</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">Organization</a></span>&nbsp;<span class="element-name">getOrganizationById</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></span>&nbsp;<span class="element-name">getOrganizationById</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
 <div class="block">根据ID查询组织详情</div>
 <dl class="notes">
 <dt>指定者:</dt>
-<dd><code><a href="../OrganizationService.html#getOrganizationById(java.lang.Long)">getOrganizationById</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.authorization.service中的接口">OrganizationService</a></code></dd>
+<dd><code><a href="../OrganizationService.html#getOrganizationById(java.lang.Long)">getOrganizationById</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
 <dt>参数:</dt>
 <dd><code>id</code> - 组织ID</dd>
 <dt>返回:</dt>

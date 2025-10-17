@@ -536,60 +536,6 @@ during client authentication when using the tls_client_auth method</div>
 </section>
 </li>
 <li>
-<section class="serialized-class-details" id="io.github.lishangbu.orange.authorization.entity.Organization">
-<h3>类&nbsp;<a href="io/github/lishangbu/orange/authorization/entity/Organization.html" title="io.github.lishangbu.orange.authorization.entity中的类">io.github.lishangbu.orange.authorization.entity.Organization</a></h3>
-<div class="type-signature">class Organization extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="java.io中的类或接口" class="external-link">Serializable</a></div>
-<dl class="name-value">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-<ul class="block-list">
-<li>
-<section class="detail">
-<h4>序列化字段</h4>
-<ul class="block-list">
-<li class="block-list">
-<h5>enabled</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="java.lang中的类或接口" class="external-link">Boolean</a> enabled</pre>
-<div class="block">组织是否启用，true表示启用，false表示禁用</div>
-</li>
-<li class="block-list">
-<h5>id</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> id</pre>
-<div class="block">主键，唯一标识组织</div>
-</li>
-<li class="block-list">
-<h5>name</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> name</pre>
-<div class="block">组织名称</div>
-</li>
-<li class="block-list">
-<h5>parentId</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> parentId</pre>
-<div class="block">父组织ID，指向上级组织，顶级组织为null</div>
-</li>
-<li class="block-list">
-<h5>remark</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> remark</pre>
-<div class="block">备注信息</div>
-</li>
-<li class="block-list">
-<h5>shortName</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> shortName</pre>
-<div class="block">组织简称</div>
-</li>
-<li class="block-list">
-<h5>sortOrder</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="java.lang中的类或接口" class="external-link">Integer</a> sortOrder</pre>
-<div class="block">排序顺序</div>
-</li>
-</ul>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<li>
 <section class="serialized-class-details" id="io.github.lishangbu.orange.authorization.entity.Permission">
 <h3>类&nbsp;<a href="io/github/lishangbu/orange/authorization/entity/Permission.html" title="io.github.lishangbu.orange.authorization.entity中的类">io.github.lishangbu.orange.authorization.entity.Permission</a></h3>
 <div class="type-signature">class Permission extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="java.io中的类或接口" class="external-link">Serializable</a></div>
@@ -867,6 +813,69 @@ during client authentication when using the tls_client_auth method</div>
 <h5>additionalParameters</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Map.html" title="java.util中的类或接口" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a>,<wbr><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a>&gt; additionalParameters</pre>
 <div class="block">附加参数：用于在获取 Token 接口返回</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
+<h2 title="程序包">程序包&nbsp;<a href="io/github/lishangbu/orange/rbac/entity/package-summary.html">io.github.lishangbu.orange.rbac.entity</a></h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="io.github.lishangbu.orange.rbac.entity.Organization">
+<h3>类&nbsp;<a href="io/github/lishangbu/orange/rbac/entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">io.github.lishangbu.orange.rbac.entity.Organization</a></h3>
+<div class="type-signature">class Organization extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="java.io中的类或接口" class="external-link">Serializable</a></div>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>序列化字段</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>code</h5>
+<pre>@NotBlank(message="\u7ec4\u7ec7\u7f16\u7801\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> code</pre>
+<div class="block">组织编码，用于外部引用和唯一标识
+
+<p>建议使用字母、数字及下划线组合，长度不超过100</div>
+</li>
+<li class="block-list">
+<h5>enabled</h5>
+<pre>@NotNull(message="\u7ec4\u7ec7\u542f\u7528\u72b6\u6001\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="java.lang中的类或接口" class="external-link">Boolean</a> enabled</pre>
+<div class="block">组织是否启用，true表示启用，false表示禁用</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> id</pre>
+<div class="block">主键，唯一标识组织</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre>@NotBlank(message="\u7ec4\u7ec7\u540d\u79f0\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> name</pre>
+<div class="block">组织名称</div>
+</li>
+<li class="block-list">
+<h5>parentId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> parentId</pre>
+<div class="block">父组织ID，指向上级组织，顶级组织为null</div>
+</li>
+<li class="block-list">
+<h5>remark</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> remark</pre>
+<div class="block">备注信息</div>
+</li>
+<li class="block-list">
+<h5>sortOrder</h5>
+<pre>@NotNull(message="\u6392\u5e8f\u987a\u5e8f\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="java.lang中的类或接口" class="external-link">Integer</a> sortOrder</pre>
+<div class="block">排序顺序</div>
 </li>
 </ul>
 </section>

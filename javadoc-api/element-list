@@ -25,6 +25,11 @@ io.github.lishangbu.orange.oauth2.common.userdetails
 io.github.lishangbu.orange.oauth2.common.web.access
 io.github.lishangbu.orange.oauth2.common.web.authentication
 io.github.lishangbu.orange.oauth2.resourceserver.autoconfiguration
+io.github.lishangbu.orange.rbac.controller
+io.github.lishangbu.orange.rbac.entity
+io.github.lishangbu.orange.rbac.mapper
+io.github.lishangbu.orange.rbac.service
+io.github.lishangbu.orange.rbac.service.impl
 io.github.lishangbu.orange.web.exception
 io.github.lishangbu.orange.web.response
 io.github.lishangbu.orange.web.result
