@@ -63,7 +63,9 @@ loadScripts(document, 'script');</script>
 <dt><a href="io/github/lishangbu/orange/oauth2/authorizationserver/util/OAuth2EndpointUtils.html#ACCESS_TOKEN_REQUEST_ERROR_URI" class="member-name-link">ACCESS_TOKEN_REQUEST_ERROR_URI</a> - 类中的静态变量 io.github.lishangbu.orange.oauth2.authorizationserver.util.<a href="io/github/lishangbu/orange/oauth2/authorizationserver/util/OAuth2EndpointUtils.html" title="io.github.lishangbu.orange.oauth2.authorizationserver.util中的类">OAuth2EndpointUtils</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html#afterPropertiesSet()" class="member-name-link">afterPropertiesSet()</a> - 类中的方法 io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration.<a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html" title="io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration中的类">JWKSourceAutoConfiguration</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">初始化时尝试从配置的资源位置加载 RSA 公钥和私钥</div>
+</dd>
 <dt><a href="io/github/lishangbu/orange/web/result/ApiResult.html" class="type-name-link" title="io.github.lishangbu.orange.web.result中的类">ApiResult&lt;T&gt;</a> - <a href="io/github/lishangbu/orange/web/result/package-summary.html">io.github.lishangbu.orange.web.result</a>中的记录类</dt>
 <dd>
 <div class="block">API 返回结果的封装类，包含状态码、数据和错误信息。</div>
@@ -596,11 +598,11 @@ Token Response</code>.</div>
 <dd>&nbsp;</dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html#jwkSource()" class="member-name-link">jwkSource()</a> - 类中的方法 io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration.<a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html" title="io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration中的类">JWKSourceAutoConfiguration</a></dt>
 <dd>
-<div class="block">An instance of com.nimbusds.jose.jwk.source.JWKSource for signing access tokens.</div>
+<div class="block">返回用于签名的 JWKSource</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html" class="type-name-link" title="io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration中的类">JWKSourceAutoConfiguration</a> - <a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/package-summary.html">io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration</a>中的类</dt>
 <dd>
-<div class="block">JWKSource自动装配</div>
+<div class="block">JWKSource 自动装配</div>
 </dd>
 <dt><a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html#%3Cinit%3E()" class="member-name-link">JWKSourceAutoConfiguration()</a> - 类的构造器 io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration.<a href="io/github/lishangbu/orange/oauth2/authorizationserver/autoconfiguration/JWKSourceAutoConfiguration.html" title="io.github.lishangbu.orange.oauth2.authorizationserver.autoconfiguration中的类">JWKSourceAutoConfiguration</a></dt>
 <dd>&nbsp;</dd>
