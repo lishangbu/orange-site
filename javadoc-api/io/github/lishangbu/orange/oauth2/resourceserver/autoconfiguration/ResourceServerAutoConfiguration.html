@@ -85,7 +85,26 @@ loadScripts(document, 'script');</script>
                       securedEnabled=true)
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">ResourceServerAutoConfiguration</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a></span></div>
-<div class="block">自动装配认证服务器</div>
+<div class="block">资源服务器自动配置类
+<p>
+为资源服务器提供默认的 Spring Security `SecurityFilterChain` 配置
+<p>
+核心职责：
+<ul>
+  <li>配置受保护资源的请求匹配规则与认证要求</li>
+  <li>禁用不必要的默认功能（如 csrf、formLogin、sessionManagement 等）以支持无状态的 API 场景</li>
+  <li>为资源服务器设置统一的认证入口点和访问拒绝处理器，确保认证/鉴权失败时返回统一的 JSON 响应格式</li>
+  <li>集成透明令牌（opaque token）验证逻辑，并确保当令牌无效时触发统一的异常处理</li>
+</ul>
+
+配置要点：
+<ul>
+  <li>使用 `@Order` 指定该 `SecurityFilterChain` 的优先级，避免与认证服务器链冲突</li>
+  <li>优先调用 `oauth2ResourceServer(...)` 并在其内部显式设置 `authenticationEntryPoint`，以防资源服务器默认行为覆盖自定义的入口点</li>
+  <li>通过 `http.exceptionHandling(...)` 提供全局的兜底处理器</li>
+</ul>
+
+注意：本配置在缺省情况下会被自动装配，若项目中存在同名 bean（`resourceServerSecurityFilterChain`）则不会覆盖</div>
 <dl class="notes">
 <dt>从以下版本开始:</dt>
 <dd>2025/8/17</dd>
@@ -122,7 +141,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">说明</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>org.springframework.security.web.SecurityFilterChain</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#resourceServerSecurityFilterChain(org.springframework.security.config.annotation.web.builders.HttpSecurity)" class="member-name-link">resourceServerSecurityFilterChain</a><wbr>(org.springframework.security.config.annotation.web.builders.HttpSecurity&nbsp;http)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">资源服务器的安全过滤链</div>
+</div>
 </div>
 </div>
 </div>
@@ -165,9 +186,22 @@ loadScripts(document, 'script');</script>
 @Order(2)
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">org.springframework.security.web.SecurityFilterChain</span>&nbsp;<span class="element-name">resourceServerSecurityFilterChain</span><wbr><span class="parameters">(org.springframework.security.config.annotation.web.builders.HttpSecurity&nbsp;http)</span>
                                                                                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="java.lang中的类或接口" class="external-link">Exception</a></span></div>
+<div class="block">资源服务器的安全过滤链
+<p>
+配置说明：
+<ol>
+  <li>放行 `oauth2Properties.ignoreUrls` 中配置的 URL；其余请求都要求认证</li>
+  <li>禁用 CSRF、CORS、表单登录、会话管理和记住我功能，以支持无状态 REST API 场景</li>
+  <li>先配置 `oauth2ResourceServer(...)` 并显式设置 `opaqueToken` 与 `authenticationEntryPoint`，避免内置默认覆盖自定义入口点</li>
+  <li>随后配置全局 `exceptionHandling`，设置统一的 `AuthenticationEntryPoint` 和 `AccessDeniedHandler`，用于处理未认证或无权限访问的情况并返回统一 JSON 响应格式</li>
+</ol></div>
 <dl class="notes">
+<dt>参数:</dt>
+<dd><code>http</code> - HttpSecurity 构造器，用于构建 SecurityFilterChain</dd>
+<dt>返回:</dt>
+<dd>构建完成的 SecurityFilterChain</dd>
 <dt>抛出:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="java.lang中的类或接口" class="external-link">Exception</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Exception.html" title="java.lang中的类或接口" class="external-link">Exception</a></code> - 当构建 SecurityFilterChain 失败时抛出</dd>
 </dl>
 </div>
 </section>

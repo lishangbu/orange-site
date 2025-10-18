@@ -86,7 +86,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">DefaultAccessDeniedHandler</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a>
 implements org.springframework.security.web.access.AccessDeniedHandler</span></div>
-<div class="block">默认异常处理</div>
+<div class="block">默认的访问拒绝处理器，在用户已认证但无权限访问资源时返回统一的 JSON 错误响应
+<p>
+返回 HTTP 403 状态以及统一的业务错误码，便于前端和网关识别和处理</div>
 <dl class="notes">
 <dt>从以下版本开始:</dt>
 <dd>2025/8/22</dd>
@@ -165,15 +167,10 @@ implements org.springframework.security.web.access.AccessDeniedHandler</span></d
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">handle</span><wbr><span class="parameters">(jakarta.servlet.http.HttpServletRequest&nbsp;request,
  jakarta.servlet.http.HttpServletResponse&nbsp;response,
- org.springframework.security.access.AccessDeniedException&nbsp;accessDeniedException)</span>
-            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="java.io中的类或接口" class="external-link">IOException</a>,
-jakarta.servlet.ServletException</span></div>
+ org.springframework.security.access.AccessDeniedException&nbsp;accessDeniedException)</span></div>
 <dl class="notes">
 <dt>指定者:</dt>
 <dd><code>handle</code>&nbsp;在接口中&nbsp;<code>org.springframework.security.web.access.AccessDeniedHandler</code></dd>
-<dt>抛出:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/IOException.html" title="java.io中的类或接口" class="external-link">IOException</a></code></dd>
-<dd><code>jakarta.servlet.ServletException</code></dd>
 </dl>
 </div>
 </section>
