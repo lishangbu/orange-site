@@ -57,11 +57,14 @@ loadScripts(document, 'script');</script>
 <li><a href="#method-summary" tabindex="0">方法概要</a></li>
 <li><a href="#method-detail" tabindex="0">方法详细资料</a>
 <ol class="toc-list">
-<li><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">getPageByOrganization(IPage, Organization)</a></li>
 <li><a href="#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">saveOrganization(Organization)</a></li>
 <li><a href="#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">updateOrganization(Organization)</a></li>
-<li><a href="#deleteOrganization(java.lang.Long)" tabindex="0">deleteOrganization(Long)</a></li>
+<li><a href="#removeOrganizationByAncestorId(java.lang.Long)" tabindex="0">removeOrganizationByAncestorId(Long)</a></li>
+<li><a href="#removeOrganizationByAncestorIds(java.util.List)" tabindex="0">removeOrganizationByAncestorIds(List)</a></li>
 <li><a href="#getOrganizationById(java.lang.Long)" tabindex="0">getOrganizationById(Long)</a></li>
+<li><a href="#getOrganizationWithDescendants(java.lang.Long)" tabindex="0">getOrganizationWithDescendants(Long)</a></li>
+<li><a href="#listAllChildrenByParentId(java.lang.Long)" tabindex="0">listAllChildrenByParentId(Long)</a></li>
+<li><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">getPageByOrganization(IPage, Organization)</a></li>
 </ol>
 </li>
 </ol>
@@ -103,30 +106,45 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">修饰符和类型</div>
 <div class="table-header col-second">方法</div>
 <div class="table-header col-last">说明</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#deleteOrganization(java.lang.Long)" class="member-name-link">deleteOrganization</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">根据ID删除组织</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOrganizationById(java.lang.Long)" class="member-name-link">getOrganizationById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">根据ID查询组织详情</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>com.baomidou.mybatisplus.core.metadata.IPage<wbr>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">getPageByOrganization</a><wbr>(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
- <a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organizationCondition)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">分页查询组织列表</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">saveOrganization</a><wbr>(<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getOrganizationWithDescendants(java.lang.Long)" class="member-name-link">getOrganizationWithDescendants</a><wbr>(@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">新增组织信息</div>
+<div class="block">查询指定组织及其所有下级组织（含自身）</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>com.baomidou.mybatisplus.core.metadata.IPage<wbr>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">getPageByOrganization</a><wbr>(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
+ <a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;condition)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">将组织分页查询并转换为树节点形式的分页结果</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#listAllChildrenByParentId(java.lang.Long)" class="member-name-link">listAllChildrenByParentId</a><wbr>(@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">递归查询所有子节点（不包含当前节点）</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">updateOrganization</a><wbr>(<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeOrganizationByAncestorId(java.lang.Long)" class="member-name-link">removeOrganizationByAncestorId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">根据祖先ID删除组织</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeOrganizationByAncestorIds(java.util.List)" class="member-name-link">removeOrganizationByAncestorIds</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">根据祖先ID列表删除组织</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">saveOrganization</a><wbr>(<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">新增组织信息</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">updateOrganization</a><wbr>(<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">根据ID更新组织信息</div>
 </div>
 </div>
@@ -143,25 +161,6 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>方法详细资料</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)">
-<h3>getPageByOrganization</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">getPageByOrganization</span><wbr><span class="parameters">(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
- <a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organizationCondition)</span></div>
-<div class="block">分页查询组织列表
-
-<p>支持按名称、启用状态等条件进行模糊查询，结果按排序顺序升序排列</div>
-<dl class="notes">
-<dt>参数:</dt>
-<dd><code>page</code> - 分页参数，包含页码和每页大小</dd>
-<dd><code>organizationCondition</code> - 查询条件，包含名称、启用状态等字段</dd>
-<dt>返回:</dt>
-<dd>组织分页数据，包含组织列表和分页信息</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="saveOrganization(io.github.lishangbu.orange.rbac.entity.Organization)">
 <h3>saveOrganization</h3>
@@ -195,16 +194,27 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="deleteOrganization(java.lang.Long)">
-<h3>deleteOrganization</h3>
+<section class="detail" id="removeOrganizationByAncestorId(java.lang.Long)">
+<h3>removeOrganizationByAncestorId</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">deleteOrganization</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
-<div class="block">根据ID删除组织
-
-<p>物理删除组织信息</div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeOrganizationByAncestorId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
+<div class="block">根据祖先ID删除组织</div>
 <dl class="notes">
 <dt>参数:</dt>
-<dd><code>id</code> - 组织ID</dd>
+<dd><code>id</code> - 祖先组织ID</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="removeOrganizationByAncestorIds(java.util.List)">
+<h3>removeOrganizationByAncestorIds</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeOrganizationByAncestorIds</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</span></div>
+<div class="block">根据祖先ID列表删除组织</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>ids</code> - 祖先组织ID列表</dd>
 </dl>
 </div>
 </section>
@@ -222,6 +232,61 @@ loadScripts(document, 'script');</script>
 <dd><code>id</code> - 组织ID</dd>
 <dt>返回:</dt>
 <dd>组织实体，未找到时返回null</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getOrganizationWithDescendants(java.lang.Long)">
+<h3>getOrganizationWithDescendants</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">getOrganizationWithDescendants</span><wbr><span class="parameters">(@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
+<div class="block">查询指定组织及其所有下级组织（含自身）
+<p>
+根据组织ID，递归返回该节点及其所有子孙节点，结果按 sortOrder、id 升序排列</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>id</code> - 组织ID，不能为空</dd>
+<dt>返回:</dt>
+<dd>组织及其所有下级组织列表</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="listAllChildrenByParentId(java.lang.Long)">
+<h3>listAllChildrenByParentId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">listAllChildrenByParentId</span><wbr><span class="parameters">(@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</span></div>
+<div class="block">递归查询所有子节点（不包含当前节点）
+<p>
+根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身
+结果按 sortOrder、id 升序排列</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>parentId</code> - 父组织ID，不能为空</dd>
+<dt>返回:</dt>
+<dd>所有子孙节点的组织列表</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getPageByOrganization(com.baomidou.mybatisplus.core.metadata.IPage,io.github.lishangbu.orange.rbac.entity.Organization)">
+<h3>getPageByOrganization</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">getPageByOrganization</span><wbr><span class="parameters">(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
+ <a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;condition)</span></div>
+<div class="block">将组织分页查询并转换为树节点形式的分页结果
+
+<p>根据传入的分页参数和动态查询条件进行组织数据的分页查询，支持按 id、name、code、enabled、parentId 等字段进行过滤
+查询结果会被映射为 <a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类"><code>OrganizationTreeNode</code></a>，便于前端直接构建组织树或展示层级信息</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>page</code> - 分页参数，包含当前页码和每页大小，不能为空</dd>
+<dd><code>condition</code> - 动态查询条件，允许为 null，常用字段：id、name、code、enabled、parentId</dd>
+<dt>返回:</dt>
+<dd>包含 <a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类"><code>OrganizationTreeNode</code></a> 的分页数据，永远不返回 null</dd>
 </dl>
 </div>
 </section>

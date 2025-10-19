@@ -55,6 +55,15 @@ loadScripts(document, 'script');</script>
 <ol class="toc-list" tabindex="-1">
 <li><a href="#" tabindex="0">说明</a></li>
 <li><a href="#method-summary" tabindex="0">方法概要</a></li>
+<li><a href="#method-detail" tabindex="0">方法详细资料</a>
+<ol class="toc-list">
+<li><a href="#selectOrganizationWithDescendantsById(java.lang.Long)" tabindex="0">selectOrganizationWithDescendantsById(Long)</a></li>
+<li><a href="#selectOrganizationsWithDescendantsByIds(java.util.List)" tabindex="0">selectOrganizationsWithDescendantsByIds(List)</a></li>
+<li><a href="#selectAllChildrenByParentId(java.lang.Long)" tabindex="0">selectAllChildrenByParentId(Long)</a></li>
+<li><a href="#selectListByOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" tabindex="0">selectListByOrganization(Organization)</a></li>
+<li><a href="#selectRootIdByIds(com.baomidou.mybatisplus.core.metadata.IPage,java.util.List)" tabindex="0">selectRootIdByIds(IPage, List)</a></li>
+</ol>
+</li>
 </ol>
 <button class="hide-sidebar"><span>隐藏子工具栏&nbsp;</span><img src="../../../../../../resource-files/left.svg" alt="隐藏子工具栏"></button><button class="show-sidebar"><img src="../../../../../../resource-files/right.svg" alt="显示子工具栏"><span>&nbsp;显示子工具栏</span></button></nav>
 <main role="main">
@@ -88,9 +97,148 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Or
 <li>
 <section class="method-summary" id="method-summary">
 <h2>方法概要</h2>
+<div id="method-summary-table">
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">所有方法</button><button id="method-summary-table-tab2" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab2', 3)" class="table-tab">实例方法</button><button id="method-summary-table-tab3" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab3', 3)" class="table-tab">抽象方法</button></div>
+<div id="method-summary-table.tabpanel" role="tabpanel" aria-labelledby="method-summary-table-tab0">
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">修饰符和类型</div>
+<div class="table-header col-second">方法</div>
+<div class="table-header col-last">说明</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectAllChildrenByParentId(java.lang.Long)" class="member-name-link">selectAllChildrenByParentId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">递归查询所有子节点（不包含当前节点）</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectListByOrganization(io.github.lishangbu.orange.rbac.entity.Organization)" class="member-name-link">selectListByOrganization</a><wbr>(<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">模糊查询组织列表</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectOrganizationsWithDescendantsByIds(java.util.List)" class="member-name-link">selectOrganizationsWithDescendantsByIds</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">查询指定组织ID列表及其所有下级组织（含自身）</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a><wbr>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectOrganizationWithDescendantsById(java.lang.Long)" class="member-name-link">selectOrganizationWithDescendantsById</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">查询指定组织及其所有下级组织（含自身）</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>com.baomidou.mybatisplus.core.metadata.IPage<wbr>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#selectRootIdByIds(com.baomidou.mybatisplus.core.metadata.IPage,java.util.List)" class="member-name-link">selectRootIdByIds</a><wbr>(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">根据组织ID列表查询对应的根组织ID列表</div>
+</div>
+</div>
+</div>
+</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-com.baomidou.mybatisplus.core.mapper.BaseMapper">从接口继承的方法&nbsp;com.baomidou.mybatisplus.core.mapper.BaseMapper</h3>
 <code>delete, deleteBatchIds, deleteById, deleteById, deleteById, deleteByIds, deleteByIds, deleteByMap, exists, insert, insert, insert, insertOrUpdate, insertOrUpdate, insertOrUpdate, insertOrUpdate, insertOrUpdate, selectBatchIds, selectBatchIds, selectById, selectByIds, selectByIds, selectByMap, selectByMap, selectCount, selectList, selectList, selectList, selectList, selectMaps, selectMaps, selectMaps, selectMaps, selectMapsPage, selectObjs, selectObjs, selectOne, selectOne, selectPage, update, update, updateById, updateById, updateById</code></div>
+</section>
+</li>
+</ul>
+</section>
+<section class="details">
+<ul class="details-list">
+<!-- ============ METHOD DETAIL ========== -->
+<li>
+<section class="method-details" id="method-detail">
+<h2>方法详细资料</h2>
+<ul class="member-list">
+<li>
+<section class="detail" id="selectOrganizationWithDescendantsById(java.lang.Long)">
+<h3>selectOrganizationWithDescendantsById</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectOrganizationWithDescendantsById</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
+<div class="block">查询指定组织及其所有下级组织（含自身）
+<p>
+根据组织ID，递归返回该节点及其所有子孙节点，结果按 sortOrder、id 升序排列</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>id</code> - 组织ID，不能为空</dd>
+<dt>返回:</dt>
+<dd>组织及其所有下级组织列表</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="selectOrganizationsWithDescendantsByIds(java.util.List)">
+<h3>selectOrganizationsWithDescendantsByIds</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectOrganizationsWithDescendantsByIds</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</span></div>
+<div class="block">查询指定组织ID列表及其所有下级组织（含自身）
+<p>
+根据组织ID列表，递归返回每个节点及其所有子孙节点，结果按 sortOrder、id 升序排列
+适用于批量树结构查询、权限分组等场景</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>ids</code> - 组织ID列表，不能为空</dd>
+<dt>返回:</dt>
+<dd>组织及其所有下级组织列表,带分页</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="selectAllChildrenByParentId(java.lang.Long)">
+<h3>selectAllChildrenByParentId</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectAllChildrenByParentId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</span></div>
+<div class="block">递归查询所有子节点（不包含当前节点）
+<p>
+根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身
+结果按 sortOrder、id 升序排列</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>parentId</code> - 父组织ID，不能为空</dd>
+<dt>返回:</dt>
+<dd>所有子孙节点的组织列表</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="selectListByOrganization(io.github.lishangbu.orange.rbac.entity.Organization)">
+<h3>selectListByOrganization</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectListByOrganization</span><wbr><span class="parameters">(@Param("organization")
+ <a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</span></div>
+<div class="block">模糊查询组织列表
+<p>
+支持按组织ID、父ID、启用状态、编码、名称等字段进行过滤，结果按 sortOrder、id 升序排列
+适用于组织管理的分页展示、条件检索等场景</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>organization</code> - 查询条件，包含组织名称、启用状态、编码等字段，允许为 null</dd>
+<dt>返回:</dt>
+<dd>组织分页数据，包含组织列表和分页信息，永不为 null</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="selectRootIdByIds(com.baomidou.mybatisplus.core.metadata.IPage,java.util.List)">
+<h3>selectRootIdByIds</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="return-type">com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;</span>&nbsp;<span class="element-name">selectRootIdByIds</span><wbr><span class="parameters">(com.baomidou.mybatisplus.core.metadata.IPage&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;&nbsp;page,
+ <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</span></div>
+<div class="block">根据组织ID列表查询对应的根组织ID列表
+
+<p>用于批量获取多个组织的顶级组织标识，支持分页查询</div>
+<dl class="notes">
+<dt>参数:</dt>
+<dd><code>page</code> - 分页参数，包含页码和每页大小</dd>
+<dd><code>ids</code> - 组织ID列表，不能为空</dd>
+<dt>返回:</dt>
+<dd>根组织ID列表，按输入ID顺序返回</dd>
+</dl>
+</div>
+</section>
+</li>
+</ul>
 </section>
 </li>
 </ul>

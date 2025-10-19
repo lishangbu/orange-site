@@ -28,6 +28,7 @@ io.github.lishangbu.orange.oauth2.resourceserver.autoconfiguration
 io.github.lishangbu.orange.rbac.controller
 io.github.lishangbu.orange.rbac.entity
 io.github.lishangbu.orange.rbac.mapper
+io.github.lishangbu.orange.rbac.model
 io.github.lishangbu.orange.rbac.service
 io.github.lishangbu.orange.rbac.service.impl
 io.github.lishangbu.orange.web.exception

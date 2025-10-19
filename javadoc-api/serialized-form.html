@@ -674,6 +674,13 @@ during client authentication when using the tls_client_auth method</div>
 <pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html" title="java.lang中的类或接口" class="external-link">String</a> name</pre>
 <div class="block">角色名称</div>
 </li>
+<li class="block-list">
+<h5>rootId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> rootId</pre>
+<div class="block">根角色ID，标识角色所属的顶级分组或父级角色
+用于角色分层管理，便于权限继承和组织结构映射
+可为空，表示无父级或为顶级角色</div>
+</li>
 </ul>
 </section>
 </li>
@@ -848,6 +855,13 @@ during client authentication when using the tls_client_auth method</div>
 <p>建议使用字母、数字及下划线组合，长度不超过100</div>
 </li>
 <li class="block-list">
+<h5>depth</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="java.lang中的类或接口" class="external-link">Integer</a> depth</pre>
+<div class="block">组织层级深度，表示当前节点距离根节点的层级
+<p>根节点深度为1，子节点依次递增
+可用于树形结构展示、权限控制等场景</div>
+</li>
+<li class="block-list">
 <h5>enabled</h5>
 <pre>@NotNull(message="\u7ec4\u7ec7\u542f\u7528\u72b6\u6001\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Boolean.html" title="java.lang中的类或接口" class="external-link">Boolean</a> enabled</pre>
 <div class="block">组织是否启用，true表示启用，false表示禁用</div>
@@ -864,8 +878,8 @@ during client authentication when using the tls_client_auth method</div>
 </li>
 <li class="block-list">
 <h5>parentId</h5>
-<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> parentId</pre>
-<div class="block">父组织ID，指向上级组织，顶级组织为null</div>
+<pre>@NotNull(message="\u4e0a\u7ea7\u7ec4\u7ec7\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> parentId</pre>
+<div class="block">父组织ID，指向上级组织，顶级组织为0</div>
 </li>
 <li class="block-list">
 <h5>remark</h5>
@@ -873,9 +887,42 @@ during client authentication when using the tls_client_auth method</div>
 <div class="block">备注信息</div>
 </li>
 <li class="block-list">
+<h5>rootId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a> rootId</pre>
+<div class="block">顶层组织ID冗余字段，表示当前节点所属的顶层公司/集团ID
+<p>顶层节点自身为其rootId，子节点为其祖先的rootId
+用于高效分组、权限控制、报表统计等场景</div>
+</li>
+<li class="block-list">
 <h5>sortOrder</h5>
 <pre>@NotNull(message="\u6392\u5e8f\u987a\u5e8f\u4e0d\u80fd\u4e3a\u7a7a") <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html" title="java.lang中的类或接口" class="external-link">Integer</a> sortOrder</pre>
 <div class="block">排序顺序</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
+<h2 title="程序包">程序包&nbsp;<a href="io/github/lishangbu/orange/rbac/model/package-summary.html">io.github.lishangbu.orange.rbac.model</a></h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="io.github.lishangbu.orange.rbac.model.OrganizationTreeNode">
+<h3>类&nbsp;<a href="io/github/lishangbu/orange/rbac/model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">io.github.lishangbu.orange.rbac.model.OrganizationTreeNode</a></h3>
+<div class="type-signature">class OrganizationTreeNode extends <a href="io/github/lishangbu/orange/rbac/entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a> implements <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/io/Serializable.html" title="java.io中的类或接口" class="external-link">Serializable</a></div>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>序列化字段</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>children</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="io/github/lishangbu/orange/rbac/model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt; children</pre>
 </li>
 </ul>
 </section>
