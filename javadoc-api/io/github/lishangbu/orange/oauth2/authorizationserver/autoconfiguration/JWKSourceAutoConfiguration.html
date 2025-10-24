@@ -93,12 +93,13 @@ implements org.springframework.beans.factory.InitializingBean</span></div>
 <p>负责提供用于签名的 JWKSource 实例，支持从配置加载公/私钥，若未配置则回退为运行时生成的密钥对
 
 <p>行为要点：
+
 <ul>
-  <li>密钥在首次使用时懒初始化，线程安全</li>
-  <li>优先使用公钥 thumbprint 作为 kid，保证 kid 稳定可复现，避免验证不稳定</li>
-  <li>Spring Authorization Server 会自动从 JWKSource 提取公钥信息供 /.well-known/jwks.json 端点使用</li>
-  <li>支持从 classpath 或文件系统加载 PEM 格式的公私钥</li>
-  <li>加载失败时自动回退为随机生成的密钥对，并记录警告</li>
+  <li>密钥在首次使用时懒初始化，线程安全
+  <li>优先使用公钥 thumbprint 作为 kid，保证 kid 稳定可复现，避免验证不稳定
+  <li>Spring Authorization Server 会自动从 JWKSource 提取公钥信息供 /.well-known/jwks.json 端点使用
+  <li>支持从 classpath 或文件系统加载 PEM 格式的公私钥
+  <li>加载失败时自动回退为随机生成的密钥对，并记录警告
 </ul></div>
 <dl class="notes">
 <dt>从以下版本开始:</dt>
@@ -186,8 +187,8 @@ implements org.springframework.beans.factory.InitializingBean</span></div>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">com.nimbusds.jose.jwk.source.JWKSource&lt;com.nimbusds.jose.proc.SecurityContext&gt;</span>&nbsp;<span class="element-name">jwkSource</span>()</div>
 <div class="block">返回用于签名的 JWKSource
 
-<p>方法保证密钥已初始化（从配置加载或运行时生成），并返回一个不可变的 JWKSet 供框架选择签名密钥
-Spring Authorization Server 会自动处理 /.well-known/jwks.json 端点，从此 JWKSource 提取公钥信息</div>
+<p>方法保证密钥已初始化（从配置加载或运行时生成），并返回一个不可变的 JWKSet 供框架选择签名密钥 Spring Authorization Server 会自动处理
+/.well-known/jwks.json 端点，从此 JWKSource 提取公钥信息</div>
 <dl class="notes">
 <dt>返回:</dt>
 <dd>包含私钥的不可变 JWKSource，用于 Authorization Server 的 JWT 签名</dd>
@@ -203,14 +204,14 @@ Spring Authorization Server 会自动处理 /.well-known/jwks.json 端点，从�
 <div class="block">初始化时尝试从配置的资源位置加载 RSA 公钥和私钥
 
 <p>优先使用 oauth2Properties 中的 jwtPublicKeyLocation 和 jwtPrivateKeyLocation 指定的资源
-若两者均成功加载则使用加载的密钥；若任一密钥缺失或解析失败则回退为随机生成的密钥对，
-并记录警告，注意重启后之前签发的 token 将不可解析
+若两者均成功加载则使用加载的密钥；若任一密钥缺失或解析失败则回退为随机生成的密钥对， 并记录警告，注意重启后之前签发的 token 将不可解析
 
 <p>支持的资源位置格式：
+
 <ul>
-  <li>classpath: classpath:rsa/public.key</li>
-  <li>文件系统: file:/path/to/public.key</li>
-  <li>相对路径: rsa/public.key（相对于 classpath）</li>
+  <li>classpath: classpath:rsa/public.key
+  <li>文件系统: file:/path/to/public.key
+  <li>相对路径: rsa/public.key（相对于 classpath）
 </ul></div>
 <dl class="notes">
 <dt>指定者:</dt>

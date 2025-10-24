@@ -87,9 +87,9 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="java.lang中的类或接口" class="external-link">Object</a>
 implements org.springframework.security.web.AuthenticationEntryPoint</span></div>
 <div class="block">统一的认证入口点，用于在未认证或认证失败时返回统一的 JSON 错误响应
-<p>
-此类由 <code>ExceptionTranslationFilter</code> 在需要发起认证流程时调用（commence），
-返回 HTTP 401 状态以及统一的业务错误码，便于前端和网关识别和处理</div>
+
+<p>此类由 <code>ExceptionTranslationFilter</code> 在需要发起认证流程时调用（commence）， 返回 HTTP 401
+状态以及统一的业务错误码，便于前端和网关识别和处理</div>
 <dl class="notes">
 <dt>从以下版本开始:</dt>
 <dd>2025/8/22</dd>

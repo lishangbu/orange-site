@@ -214,6 +214,7 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <div class="block">新增组织信息，自动维护层级深度和顶级组织ID
 
 <p>根据 parentId 判断组织层级和 rootId：
+
 <ul>
   <li>顶级组织（parentId=0）：depth=1，插入后 rootId=自身 id
   <li>非顶级组织：depth=父组织.depth+1，rootId=父组织.rootId
@@ -300,8 +301,9 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">getOrganizationWithDescendants</span><wbr><span class="parameters">(@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
 <div class="block">查询指定组织及其所有下级组织（含自身），并构建树结构
-<p>
-业务逻辑：
+
+<p>业务逻辑：
+
 <ol>
   <li>根据组织ID查询组织实体，若不存在则返回空列表
   <li>递归查询该组织及所有子孙节点，按 sortOrder、id 升序排列
@@ -324,9 +326,8 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">listAllChildrenByParentId</span><wbr><span class="parameters">(@NonNull <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</span></div>
 <div class="block">递归查询所有子节点（不包含当前节点）
-<p>
-根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身
-结果按 sortOrder、id 升序排列</div>
+
+<p>根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身 结果按 sortOrder、id 升序排列</div>
 <dl class="notes">
 <dt>指定者:</dt>
 <dd><code><a href="../OrganizationService.html#listAllChildrenByParentId(java.lang.Long)">listAllChildrenByParentId</a></code>&nbsp;在接口中&nbsp;<code><a href="../OrganizationService.html" title="io.github.lishangbu.orange.rbac.service中的接口">OrganizationService</a></code></dd>
@@ -346,8 +347,7 @@ implements <a href="../OrganizationService.html" title="io.github.lishangbu.oran
  <a href="../../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;condition)</span></div>
 <div class="block">将组织分页查询并转换为树节点形式的分页结果
 
-<p>根据传入的分页参数和动态查询条件进行组织数据的分页查询，支持按 id、name、code、enabled、parentId 等字段进行过滤
-查询结果会被映射为 <a href="../../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类"><code>OrganizationTreeNode</code></a>，便于前端直接构建组织树或展示层级信息
+<p>根据传入的分页参数和动态查询条件进行组织数据的分页查询，支持按 id、name、code、enabled、parentId 等字段进行过滤 查询结果会被映射为 <a href="../../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类"><code>OrganizationTreeNode</code></a>，便于前端直接构建组织树或展示层级信息
 
 <ol>
   <li>若 <code>condition</code> 为 null，则视为无过滤条件，查询所有组织

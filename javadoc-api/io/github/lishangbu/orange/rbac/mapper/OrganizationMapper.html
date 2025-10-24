@@ -153,8 +153,8 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Or
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectOrganizationWithDescendantsById</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
 <div class="block">查询指定组织及其所有下级组织（含自身）
-<p>
-根据组织ID，递归返回该节点及其所有子孙节点，结果按 sortOrder、id 升序排列</div>
+
+<p>根据组织ID，递归返回该节点及其所有子孙节点，结果按 sortOrder、id 升序排列</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>id</code> - 组织ID，不能为空</dd>
@@ -170,9 +170,8 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Or
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectOrganizationsWithDescendantsByIds</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</span></div>
 <div class="block">查询指定组织ID列表及其所有下级组织（含自身）
-<p>
-根据组织ID列表，递归返回每个节点及其所有子孙节点，结果按 sortOrder、id 升序排列
-适用于批量树结构查询、权限分组等场景</div>
+
+<p>根据组织ID列表，递归返回每个节点及其所有子孙节点，结果按 sortOrder、id 升序排列 适用于批量树结构查询、权限分组等场景</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>ids</code> - 组织ID列表，不能为空</dd>
@@ -188,9 +187,8 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Or
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectAllChildrenByParentId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</span></div>
 <div class="block">递归查询所有子节点（不包含当前节点）
-<p>
-根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身
-结果按 sortOrder、id 升序排列</div>
+
+<p>根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身 结果按 sortOrder、id 升序排列</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>parentId</code> - 父组织ID，不能为空</dd>
@@ -207,9 +205,8 @@ extends com.baomidou.mybatisplus.core.mapper.BaseMapper&lt;<a href="../entity/Or
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&gt;</span>&nbsp;<span class="element-name">selectListByOrganization</span><wbr><span class="parameters">(@Param("organization")
  <a href="../entity/Organization.html" title="io.github.lishangbu.orange.rbac.entity中的类">Organization</a>&nbsp;organization)</span></div>
 <div class="block">模糊查询组织列表
-<p>
-支持按组织ID、父ID、启用状态、编码、名称等字段进行过滤，结果按 sortOrder、id 升序排列
-适用于组织管理的分页展示、条件检索等场景</div>
+
+<p>支持按组织ID、父ID、启用状态、编码、名称等字段进行过滤，结果按 sortOrder、id 升序排列 适用于组织管理的分页展示、条件检索等场景</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>organization</code> - 查询条件，包含组织名称、启用状态、编码等字段，允许为 null</dd>

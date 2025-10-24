@@ -276,8 +276,8 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeOrganizationByAncestorIds</span><wbr><span class="parameters">(@PathVariable
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&gt;&nbsp;ids)</span></div>
 <div class="block">批量删除组织
-<p>
-支持使用逗号分隔的路径参数传递多个 ID，例如 /1,2,3</div>
+
+<p>支持使用逗号分隔的路径参数传递多个 ID，例如 /1,2,3</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>ids</code> - 组织ID列表，不能为空且元素为正整数</dd>
@@ -310,8 +310,8 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">getOrganizationWithDescendants</span><wbr><span class="parameters">(@PathVariable
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;id)</span></div>
 <div class="block">查询指定组织及其所有下级组织（含自身）
-<p>
-根据组织ID，递归返回该节点及其所有子孙节点，结果按 sortOrder、id 升序排列</div>
+
+<p>根据组织ID，递归返回该节点及其所有子孙节点，结果按 sortOrder、id 升序排列</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>id</code> - 组织ID</dd>
@@ -329,9 +329,8 @@ loadScripts(document, 'script');</script>
 </span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html" title="java.util中的类或接口" class="external-link">List</a>&lt;<a href="../model/OrganizationTreeNode.html" title="io.github.lishangbu.orange.rbac.model中的类">OrganizationTreeNode</a>&gt;</span>&nbsp;<span class="element-name">listAllChildrenByParentId</span><wbr><span class="parameters">(@PathVariable
  <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="java.lang中的类或接口" class="external-link">Long</a>&nbsp;parentId)</span></div>
 <div class="block">递归查询所有子节点（不包含当前节点）
-<p>
-根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身
-结果按 sortOrder、id 升序排列</div>
+
+<p>根据指定父组织ID，返回其所有下级组织（多级），不包含父节点本身 结果按 sortOrder、id 升序排列</div>
 <dl class="notes">
 <dt>参数:</dt>
 <dd><code>parentId</code> - 父组织ID</dd>
